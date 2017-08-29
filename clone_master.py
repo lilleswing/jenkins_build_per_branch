@@ -27,9 +27,10 @@ def clone_job(server, old_name, new_name, new_branch):
 
 def main(settings):
   server = jenkins.Jenkins(settings['server'], username=settings['username'], password=settings['password'])
+  git_local_branch = os.environ['GIT_BRANCH'].split('/')[-1]
   clone_job(server,
             settings['master_job'],
-            "%s_%s" % (settings['new_prefix'], os.environ['GIT_LOCAL_BRANCH']),
+            "%s_%s" % (settings['new_prefix'], git_local_branch),
             os.environ['GIT_BRANCH'])
 
 
