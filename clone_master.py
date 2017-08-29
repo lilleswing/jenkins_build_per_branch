@@ -7,8 +7,8 @@ import xml.etree.ElementTree
 
 def clone_job(server, old_name, new_name, new_branch):
   try:
-    existing_job = server.get_job_config(new_name)
-    server.build_job(existing_job)
+    server.get_job_config(new_name)
+    server.build_job(new_name)
     print("%s already exists")
     return
   except Exception as e:
