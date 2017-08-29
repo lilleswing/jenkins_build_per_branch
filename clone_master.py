@@ -11,7 +11,8 @@ def clone_job(server, old_name, new_name, new_branch):
     server.build_job(existing_job)
     print("%s already exists")
     return
-  except:
+  except Exception as e:
+    print(e)
     pass
 
   print("creating new job %s" % new_name)
