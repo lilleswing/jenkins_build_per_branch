@@ -1,7 +1,7 @@
 {
-  "server": "",
-  "username": "",
-  "password": "",
-  "master_job": "",
-  "new_prefix": ""
+  "server": "https://tentacool.bb.schrodinger.com",
+  "username": "leswing",
+  "password": "uv[ie4ae",
+  "master_job": "ldlearning_master",
+  "new_prefix": "ldlearning_"
 }
