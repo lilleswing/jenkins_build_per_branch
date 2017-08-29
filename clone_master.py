@@ -35,3 +35,4 @@ def main(settings):
 
 if __name__ == "__main__":
   settings = json.loads(open(sys.argv[1]).read())
+  main(settings)
