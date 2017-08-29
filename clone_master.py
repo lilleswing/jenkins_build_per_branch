@@ -16,11 +16,10 @@ def clone_job(server, old_name, new_name, new_branch):
 
   print("creating new job %s" % new_name)
   my_job = server.get_job_config(old_name)
-  server.copy_job(old_name, new_name)
   et = xml.etree.ElementTree.fromstring(my_job)
   et.find('scm').find('branches').find('hudson.plugins.git.BranchSpec').find('name').text = new_branch
   reconfigure_xml = xml.etree.ElementTree.tostring(et)
-  server.reconfig_job(new_name, reconfigure_xml)
+  server.create_job(new_name, reconfigure_xml)
   server.enable_job(new_name)
   server.build_job(new_name)
 
